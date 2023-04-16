@@ -1,12 +1,19 @@
 #!/usr/bin/python3
-# 3-infinite_add.py
-# Mindaye Bogale Defaru <bmindaye12@gmail.com>
+from ast import Add
+from audioop import add
+
 
 if __name__ == "__main__":
-    """Print the addition of all arguments."""
-    import sys
 
-    total = 0
-    for i in range(len(sys.argv) - 1):
-        total += int(sys.argv[i + 1])
-    print("{}".format(total))
+    from sys import argv
+    addition = 0
+
+    number_of_args = len(argv)
+
+    if number_of_args == 0:
+        print(f"{addition:d}")
+    for argument in argv:
+        if argument != argv[0]:
+            addition += int(argument)
+
+    print("{}".format(addition))
